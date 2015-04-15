@@ -1,0 +1,41 @@
+/*Mixins and Variables*/
+@mixin translateX($distance) {
+    -ms-transform:translateX($distance);
+    -o-transform:translateX($distance);
+    -moz-transform:translateX($distance);
+    -webkit-transform:translateX($distance);
+    transform:translateX($distance);
+}
+
+nav {
+    border-bottom:4px solid #f00 !important;
+
+    .navbar-brand {
+        padding:0;
+
+        img {
+            height:50px;
+            width:auto;
+        }
+    }
+
+    .nav-pills {
+
+        li {
+            background:#fff;
+
+            a {
+                color:#f00;
+                font-size:1.5em;
+                border-radius:0;
+                border-top-right-radius:10px;
+                border-top-left-radius:10px;
+
+                &:hover {
+                    background:#f00;
+                    color:#fff;
+                }
+            }
+        }
+    }
+}
