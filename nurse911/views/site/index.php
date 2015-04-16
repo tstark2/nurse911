@@ -1,51 +1,28 @@
 <?php
-/* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+
+use yii\helpers\Html;
+
+$this->title = 'Nurse911';
 ?>
-<div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+<section class="container" id="indexPage">
+    <?= Html::img('@web/images/nurses.jpg', ['alt' => 'Some Nurses', 'class' => 'img-responsive']) ?>
+    <h1>Welcome to Nurse911</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+    <article class="col-sm-8">
+        <h3>We're here to help!</h3>
+        <p>All nurses, from the first-year student to the seasoned veteran need help occasionally. Whether you need help with conversions, a reference for scales, or
+        just a convenient place to store important numbers, Nurse911 has got your back. Let us do the trivial stuff for you, so you can focus on what's really
+        important: <em>your patients.</em></p>
+    </article>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+    <article class="col-sm-4 callToAction">
+        <h3>Login to Nurse911</h3>
+        <div class="form">
+            <?= Html::textInput('username', $value = null, ['placeholder' => 'Username']) ?>
+            <?= Html::passwordInput('password', $value = null, ['placeholder' =>'Password']) ?>
+            <?= Html::submitButton('Login', ['class' => 'btn btn-red']) ?>
+            <p>Don't have an account? <?= Html::a('Sign Up', ['user/create']) ?></p>
         </div>
-
-    </div>
-</div>
+    </article>
+</section>
