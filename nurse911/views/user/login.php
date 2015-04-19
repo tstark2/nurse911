@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+/* This is the login page */
+
 $this->title = 'Nurse911 :: Login';
 ?>
 

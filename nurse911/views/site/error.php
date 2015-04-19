@@ -6,6 +6,7 @@ use yii\helpers\Html;
 /* @var $name string */
 /* @var $message string */
 /* @var $exception Exception */
+/* This is the error page.*/
 
 $this->title = $name;
 ?>

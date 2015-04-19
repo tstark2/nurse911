@@ -5,6 +5,7 @@
     use yii\bootstrap\Nav;
 
     AppAsset::register($this);
+    /* This is the main layout. It is houses the header and footer content */
 ?>
 
 <?php $this->beginPage() ?>

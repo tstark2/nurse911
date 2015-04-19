@@ -106,6 +106,7 @@ class UserController extends Controller
         return $this->redirect(['index']);
     }
 
+    //Logs the specified user in.
     public function actionLogin()
     {
         $request = Yii::$app->request;
@@ -128,6 +129,7 @@ class UserController extends Controller
         }
     }
 
+    //logs the user out
     public function actionLogout()
     {
         Yii::$app->user->logout();

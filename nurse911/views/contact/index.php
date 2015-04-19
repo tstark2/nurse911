@@ -6,6 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ContactSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* This is the contacts index page */
 
 $this->title = 'Contacts';
 $this->params['breadcrumbs'][] = $this->title;
@@ -21,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'class' => 'contactList',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'description',

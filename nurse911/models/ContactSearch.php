@@ -14,6 +14,7 @@ class ContactSearch extends Contact
 {
     /**
      * @inheritdoc
+     * validation rules
      */
     public function rules()
     {

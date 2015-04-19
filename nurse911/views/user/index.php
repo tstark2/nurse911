@@ -6,6 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* This is the user index page. */
 
 $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;

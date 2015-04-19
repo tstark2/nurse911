@@ -5,6 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Contact */
+/* This is the create contact page */
 
 $this->title = 'Create Contact';
 $this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];

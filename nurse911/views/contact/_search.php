@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\ContactSearch */
 /* @var $form yii\widgets\ActiveForm */
+/* This is the form used to search for contacts */
 ?>
 
 <div class="contact-search">

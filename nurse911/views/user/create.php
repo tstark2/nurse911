@@ -5,6 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\User */
+/* This is the create user page */
 
 $this->title = 'Nurse911 :: Sign Up';
 ?>

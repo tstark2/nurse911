@@ -6,6 +6,8 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Contact */
 /* @var $form yii\widgets\ActiveForm */
+
+/* This is the form used to create and update contacts */
 ?>
 
 <div class="contact-form">

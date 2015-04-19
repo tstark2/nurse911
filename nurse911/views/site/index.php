@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Nurse911';
+/* This is the home page for the application */
 ?>
 
 <section class="container" id="indexPage">

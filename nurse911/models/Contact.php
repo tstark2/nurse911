@@ -19,6 +19,7 @@ class Contact extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
+     * returns the table name
      */
     public static function tableName()
     {
@@ -27,6 +28,7 @@ class Contact extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
+     * validation rules for the contact form
      */
     public function rules()
     {
@@ -38,6 +40,7 @@ class Contact extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
+     * converts labels into human readable strings
      */
     public function attributeLabels()
     {

@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Contact */
+/* This is the view contact page */
 
 $this->title = $model->description;
 $this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];

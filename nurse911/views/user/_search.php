@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\UserSearch */
 /* @var $form yii\widgets\ActiveForm */
+/* this is the form used to search for users */
 ?>
 
 <div class="user-search">

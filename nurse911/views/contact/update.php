@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Contact */
+/* This is the update contact page */
 
 $this->title = 'Update Contact: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];

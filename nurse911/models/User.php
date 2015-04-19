@@ -19,6 +19,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
     /**
      * @inheritdoc
+     * returns the table name
      */
     public static function tableName()
     {
@@ -27,6 +28,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     /**
      * @inheritdoc
+     * validation rules
      */
     public function rules()
     {
@@ -37,6 +39,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     /**
      * @inheritdoc
+     * converts labels into human readable strings
      */
     public function attributeLabels()
     {
@@ -50,6 +53,9 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         ];
     }
 
+    /**
+    * finds a specific user by username
+    */
     public static function findByUsername($username)
     {
         $user = User::find()->where(['username' => $username])->one();
@@ -57,68 +63,91 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return $user;
     }
 
+    /**
+    * finds a specific user by id
+    */
     public static function findIdentity($id)
     {
         return static::findOne(['id' => $id]);
     }
 
+    /**
+    * finds a user by access token
+    * I'm not using this, but it's required for IdentityInterface to work
+    */
     public static function findIdentityByAccessToken($token, $type = null)
     {
         throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
 
+    /**
+    * gets a users id
+    */
     public function getId()
     {
         return $this->getPrimaryKey();
     }
 
+    /**
+    * gets a users authKey
+    * I'm not using this, but IdentityInterface needs it
+    */
     public function getAuthKey()
     {
         return $this->auth_key;
     }
 
+    /**
+    * validates a users authKey
+    * I'm not using this, but IdentityInterface needs it
+    */
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
     }
 
+    /**
+    * validates a users password
+    * I'm not using this, but IdentityInterface needs it
+    */
     public function validatePassword($password)
     {
         return Yii::$app->security->validatePassword($password, $this->password);
     }
 
+    /**
+    * changes a users password
+    * I'm not using this, but IdentityInterface needs it
+    */
     public function setPassword($password)
     {
         $this->password_hash = Yii::$app->security->generatePasswordHash($password);
     }
 
+    /**
+    * creates a users authKey
+    * I'm not using this, but IdentityInterface needs it
+    */
     public function generateAuthKey()
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
 
+    /**
+    * creates a users password reset token
+    * I'm not using this, but IdentityInterface needs it
+    */
     public function generatePasswordResetToken()
     {
         $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
+    /**
+    * removes a users password reset token
+    * I'm not using this, but IdentityInterface needs it
+    */
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
     }
-
-    /*public function beforeSave($insert)
-    {
-        $return = parent::beforeSave($insert);
-
-        if($this->isAttributeChanged('password')) {
-            $this->password = Yii::$app->getSecurity()->generatePasswordHash($this->password);
-        }
-
-        if ($this->isNewRecord) {
-            $this->auth_key = Yii::$app->getSecurity()->generateRandomString();
-        }
-
-        return $return;
-    }*/
 }

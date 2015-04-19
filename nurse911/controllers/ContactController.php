@@ -27,18 +27,22 @@ class ContactController extends Controller
     }
 
     /**
-     * Lists all Contact models.
+     * Lists all Contact models for logged in user.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ContactSearch(['userRef' => Yii::$app->user->id]);
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if(Yii::$app->user->isGuest) {
+            $this->redirect(['user/login']);
+        } else {
+            $searchModel = new ContactSearch(['userRef' => Yii::$app->user->id]);
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }
     }
 
     /**

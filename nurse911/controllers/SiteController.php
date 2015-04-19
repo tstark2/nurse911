@@ -47,13 +47,9 @@ class SiteController extends Controller
         ];
     }
 
+    //renders the index page
     public function actionIndex()
     {
         return $this->render('index');
-    }
-
-    public function actionWelcome()
-    {
-        return $this->render('welcome');
     }
 }

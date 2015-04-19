@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\User */
+/* This is the update user page */
 
 $this->title = 'Update User: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
