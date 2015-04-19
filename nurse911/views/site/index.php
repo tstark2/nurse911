@@ -17,12 +17,17 @@ $this->title = 'Nurse911';
     </article>
 
     <article class="col-sm-4 callToAction">
-        <h3>Login to Nurse911</h3>
-        <div class="form">
-            <?= Html::textInput('username', $value = null, ['placeholder' => 'Username']) ?>
-            <?= Html::passwordInput('password', $value = null, ['placeholder' =>'Password']) ?>
-            <?= Html::submitButton('Login', ['class' => 'btn btn-red']) ?>
-            <p>Don't have an account? <?= Html::a('Sign Up', ['user/create']) ?></p>
+       <h3>Join us!</h3>
+        <div class="buttons">
+            <div id="left">
+                <p>Not a Member?</p>
+                <?= Html::a('Sign Up', ['user/create'], ['class' => 'btn btn-red']) ?>
+            </div>
+            <div id="right">
+                <p>Returning Member?</p>
+                <?= Html::a('Login', ['user/login'], ['class' => 'btn btn-red']) ?>
+            </div>
         </div>
+
     </article>
 </section>

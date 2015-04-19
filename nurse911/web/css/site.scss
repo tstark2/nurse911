@@ -7,6 +7,31 @@
     transform:translateX($distance);
 }
 
+@mixin translateY($distance) {
+    -ms-transform:translateY($distance);
+    -o-transform:translateY($distance);
+    -moz-transform:translateY($distance);
+    -webkit-transform:translateY($distance);
+    transform:translateY($distance);
+}
+
+@mixin clearfix() {
+    &:after {
+        content: ".";
+        visibility:hidden;
+        display:block;
+        height:0;
+        clear:both;
+    }
+}
+
+@mixin formStyles() {
+    border-radius:10px;
+    color:#f00;
+    border:4px solid #f00;
+    padding:2%;
+}
+
 .btn-red {
     background-color:#f00;
     color:#fff;
@@ -14,6 +39,15 @@
     &:hover {
         color:#fff;
         background:#c00;
+    }
+}
+
+.textLink {
+    color:#f00;
+    text-decoration:underline;
+
+    &:hover {
+        color:#900;
     }
 }
 
@@ -34,6 +68,19 @@ nav {
         li {
             background:#fff;
 
+            &.active {
+
+                a {
+                    background-color:#fff;
+                    color:#f00;
+
+                    &:hover, &:focus, &:active {
+                        background:#f00;
+                        color:#fff;
+                    }
+                }
+            }
+
             a {
                 color:#f00;
                 font-size:1.5em;
@@ -41,12 +88,17 @@ nav {
                 border-top-right-radius:10px;
                 border-top-left-radius:10px;
 
-                &:hover {
+                &:hover, &:focus, &:active {
                     background:#f00;
                     color:#fff;
                 }
             }
         }
+    }
+
+    .authenticationIndicator {
+        float:right;
+
     }
 }
 
@@ -59,11 +111,68 @@ nav {
 
     .callToAction {
 
-        .form{
-            border-radius:10px;
-            color:#f00;
-            border:4px solid #f00;
-            padding:2%;
+        .buttons{
+            @include formStyles();
+            @include clearfix();
+
+            .btn {
+                margin-top:10px;
+            }
+
+            #left {
+                float:left;
+                width:50%;
+                text-align:center;
+                border-right:4px solid #f00;
+            }
+
+            #right {
+                float:right;
+                width:50%;
+                text-align:center;
+            }
+
         }
+    }
+}
+
+.user-login {
+
+    form{
+        @include formStyles();
+
+        label {
+            display:block;
+        }
+
+        input {
+            width:100%;
+        }
+
+        button {
+            display:block;
+            margin-top:10px;
+        }
+
+        span {
+            float:right;
+            @include translateY(-25px);
+            font-size:1.25em;
+        }
+    }
+
+    img {
+        @include translateY(-50px);
+    }
+}
+
+.user-form {
+    @include formStyles();
+}
+
+.user-create {
+
+    img {
+        @include translateY(-50px);
     }
 }
