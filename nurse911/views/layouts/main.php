@@ -25,7 +25,13 @@
     echo Nav::widget([
         'items' => [
             ['label' => 'Contacts', 'url' => ['/contact/index']],
-            ['label' => 'Conversions', 'url' => ['#']],
+            ['label' => 'Conversions',
+                'items' => [
+                    ['label' => 'Weight', 'url' => ['conversion/weight']],
+                    ['label' => 'Volume', 'url' => ['conversion/volume']],
+                    ['label' => 'Temperature', 'url' => ['conversion/temperature']],
+                    ['label' => 'Height', 'url' => ['conversion/height']],
+                ]],
             ['label' => 'Scales', 'url' => ['#']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/user/login']] :

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Login;
 use app\models\ContactForm;
+use app\models\Conversion;
 
 class SiteController extends Controller
 {
@@ -52,4 +53,5 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
 }
