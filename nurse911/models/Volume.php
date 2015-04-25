@@ -54,4 +54,11 @@ class Volume extends \yii\db\ActiveRecord
             'liter' => 'Liter',
         ];
     }
+
+        public static function findById($id)
+    {
+        $volume = Volume::findOne($id);
+
+        return $volume;
+    }
 }

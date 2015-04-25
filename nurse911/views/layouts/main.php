@@ -29,7 +29,7 @@
                 'items' => [
                     ['label' => 'Weight', 'url' => ['conversion/weight']],
                     ['label' => 'Volume', 'url' => ['conversion/volume']],
-                    ['label' => 'Temperature', 'url' => ['conversion/temperature']],
+                    /*['label' => 'Temperature', 'url' => ['conversion/temperature']],*/
                     ['label' => 'Height', 'url' => ['conversion/height']],
                 ]],
             ['label' => 'Scales', 'url' => ['#']],

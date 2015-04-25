@@ -102,6 +102,12 @@ nav {
     }
 }
 
+.open {
+    > a:hover, > a:active, > a:focus {
+        background:#f00 !important;
+    }
+}
+
 #indexPage {
 
     h1 {
@@ -174,5 +180,32 @@ nav {
 
     img {
         @include translateY(-50px);
+    }
+}
+
+.contact-form {
+    @include formStyles();
+}
+
+
+.conversionImg {
+    @include translateY(-50px);
+    height:250px;
+    width:auto;
+
+}
+
+.conversionForm {
+    @include formStyles();
+    min-height:200px;
+    text-align:left;
+    font-size:1.5em;
+
+    span {
+        line-height:2em;
+    }
+
+    button {
+        margin-top:20px;
     }
 }

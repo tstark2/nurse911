@@ -52,6 +52,7 @@ class Weight extends \yii\db\ActiveRecord
     public static function findById($id)
     {
         $weight = Weight::findOne($id);
+
         return $weight;
     }
 }

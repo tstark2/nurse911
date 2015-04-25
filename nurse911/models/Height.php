@@ -50,4 +50,11 @@ class Height extends \yii\db\ActiveRecord
             'meter' => 'Meter',
         ];
     }
+
+    public static function findById($id)
+    {
+        $height = height::findOne($id);
+
+        return $height;
+    }
 }
