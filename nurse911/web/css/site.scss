@@ -209,3 +209,15 @@ nav {
         margin-top:20px;
     }
 }
+
+.scale {
+    @include formStyles();
+
+    h3:first-of-type {
+        margin-top:0;
+    }
+
+    label {
+        display:block;
+    }
+}

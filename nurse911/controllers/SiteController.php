@@ -51,6 +51,11 @@ class SiteController extends Controller
     //renders the index page
     public function actionIndex()
     {
+        if(Yii::$app->user->isGuest) {
+            $this->layout='guest';
+        } else {
+            $this->layout='main';
+        }
         return $this->render('index');
     }
 

@@ -60,6 +60,12 @@ class UserController extends Controller
      */
     public function actionCreate()
     {
+        if(Yii::$app->user->isGuest) {
+            $this->layout='guest';
+        } else {
+            $this->layout='main';
+        }
+
         $model = new User();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -109,6 +115,12 @@ class UserController extends Controller
     //Logs the specified user in.
     public function actionLogin()
     {
+        if(Yii::$app->user->isGuest) {
+            $this->layout='guest';
+        } else {
+            $this->layout='main';
+        }
+
         $request = Yii::$app->request;
 
         if ($request->isPost) {
