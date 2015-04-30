@@ -6,12 +6,12 @@ use yii\helpers\Html;
 /* @var $model app\models\Contact */
 /* This is the update contact page */
 
-$this->title = 'Update Contact: ' . ' ' . $model->id;
+$this->title = 'Update Contact: ' . ' ' . $model->description;
 $this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="contact-update">
+<div class="contact-update container">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

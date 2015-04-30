@@ -221,3 +221,8 @@ nav {
         display:block;
     }
 }
+
+.contact-view, .contact {
+    @include formStyles();
+}
+

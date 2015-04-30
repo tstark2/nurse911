@@ -6,6 +6,15 @@ $this->title = 'FLACC Scale';
 ?>
 <div class="scale-flacc container">
     <h1>FLACC Scale</h1>
+    <?php if(isset($result)): ?>
+    <div class="col-xs-8 scale">
+        <?php
+            echo "<h3>Score: " . $result['score'] . "</h3>";
+            echo "<p>Patient is likely in " . $result['pain'] . "</p>";
+        ?>
+        <?= Html::a('Another Assesment?', ['scale/flacc']) ?>
+    </div>
+    <?php else: ?>
     <?= Html::beginForm(['scale/flacc'], 'post', ['class' => 'scale col-xs-8']) ?>
            <h3>Face</h3>
             <?= Html::radioList('face', null, [
@@ -38,5 +47,11 @@ $this->title = 'FLACC Scale';
                 2 => '2: Difficult to console or comfort'
             ]) ?>
             <?= Html::submitButton('Calculate', ['class' => 'btn btn-red']) ?>
-    <?php Html::endForm() ?>
+    <?= Html::endForm() ?>
+    <?php endif ?>
+
+    <div class="col-xs-4">
+    <?= Html::img('@web/images/nurse8.jpg', ['alt' => 'A Nurse', 'class' => 'img-responsive']) ?>
+    </div>
+
 </div>

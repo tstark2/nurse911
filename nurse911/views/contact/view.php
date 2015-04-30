@@ -11,7 +11,7 @@ $this->title = $model->description;
 $this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="contact-view">
+<div class="contact-view container">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -20,10 +20,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Are you sure you want to delete this contact?',
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Back to Contacts', ['index'], ['class' => 'btn btn-red']) ?>
     </p>
 
     <?= DetailView::widget([

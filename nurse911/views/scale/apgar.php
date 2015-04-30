@@ -46,6 +46,10 @@ $this->title = 'APGAR Score';
                 2 => '2: Strong, lusty cry'
             ]) ?>
             <?= Html::submitButton('Calculate', ['class' => 'btn btn-red']) ?>
-    <?php Html::endForm() ?>
+    <?= Html::endForm() ?>
     <?php endif ?>
+
+    <div class="col-xs-4">
+    <?= Html::img('@web/images/nurse7.jpg', ['alt' => 'A Nurse', 'class' => 'img-responsive']) ?>
+    </div>
 </div>

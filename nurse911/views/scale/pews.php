@@ -6,6 +6,15 @@ $this->title = 'Pediatric Early Warning Signs';
 ?>
 <div class="scale-pews container">
     <h1>Pediatric Early Warning Signs</h1>
+      <?php if(isset($result)): ?>
+          <div class="col-xs-8 scale">
+            <?php
+                echo "<h3 style='color:" . $result['color'] .";'>Score: " . $result['total'] . "</h3>";
+                echo "<p style='color:" . $result['color'] . ";'>" . $result['action'] . "</p>";
+            ?>
+            <?= Html::a('Another Assesment?', ['scale/pews']) ?>
+          </div>
+      <?php else: ?>
        <?= Html::beginForm(['scale/pews'], 'post', ['class' => 'scale col-xs-8']) ?>
            <h3>Behavior</h3>
             <?= Html::radioList('behavior', null, [
@@ -36,5 +45,11 @@ $this->title = 'Pediatric Early Warning Signs';
                 3 => '3: Urine output less than 0.5 mL/kg/hour over last 4 hours, or more than 3 BMs or emesis events in last 12 hours',
             ]) ?>
             <?= Html::submitButton('Calculate', ['class' => 'btn btn-red']) ?>
-    <?php Html::endForm() ?>
+    <?= Html::endForm() ?>
+    <?php endif ?>
+
+    <div class="col-xs-4">
+    <?= Html::img('@web/images/nurse9.jpg', ['alt' => 'A Nurse', 'class' => 'img-responsive']) ?>
+    </div>
+
 </div>

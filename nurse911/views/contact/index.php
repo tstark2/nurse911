@@ -15,25 +15,27 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Contact', ['create'], ['class' => 'btn btn-red']) ?>
-    </p>
+    <div class="contact">
+        <p>
+            <?= Html::a('Create Contact', ['create'], ['class' => 'btn btn-red']) ?>
+        </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'class' => 'contactList',
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'description',
-            'phone',
-            'extension',
-            'email:email',
-            'fax',
-            //'userRef',
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'class' => 'contactList',
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+                'description',
+                'phone',
+                'extension',
+                'email:email',
+                'fax',
+                //'userRef',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+    </div>
 
 </div>

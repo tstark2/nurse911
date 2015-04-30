@@ -60,11 +60,7 @@ class UserController extends Controller
      */
     public function actionCreate()
     {
-        if(Yii::$app->user->isGuest) {
-            $this->layout='guest';
-        } else {
-            $this->layout='main';
-        }
+        $this->layout='guest';
 
         $model = new User();
 
@@ -72,7 +68,7 @@ class UserController extends Controller
 
             $model->password = Yii::$app->getSecurity()->generatePasswordHash($model->password);
             $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['login', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,

@@ -13,7 +13,7 @@ $this->title = 'Glasgow Coma Scale';
                 echo "<h3>Verbal: " . $result['verbal'] . "</h3>";
                 echo "<h3>Motor: " . $result['motor'] . "</h3>";
                 echo "<h2>Total: " . $result['total'] . "</h2>";
-                echo "<p>This patient has " . $result['text'] ."</p>";
+                echo "<p>This patient may have " . $result['text'] ."</p>";
             ?>
             <?= Html::a('Another Assesment?', ['scale/gcs']) ?>
         </div>
@@ -44,6 +44,11 @@ $this->title = 'Glasgow Coma Scale';
                 6 => '6: Obeys commands'
             ]) ?>
             <?= Html::submitButton('Calculate', ['class' => 'btn btn-red']) ?>
-    <?php Html::endForm() ?>
+    <?= Html::endForm() ?>
     <?php endif ?>
+
+    <div class="col-xs-4">
+    <?= Html::img('@web/images/nurse6.jpg', ['alt' => 'A Nurse', 'class' => 'img-responsive']) ?>
+    </div>
+
 </div>
